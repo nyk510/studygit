@@ -8,6 +8,9 @@ git config --global alias.graph "log --graph --date-order --all --pretty=format:
 introduce to git  
 https://github.com/takanabe/introduction-to-git
 
+hoge
+
+
 (このファイルはmarkdownによって書かれています)
 
 ## markdownの特徴

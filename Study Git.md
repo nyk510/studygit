@@ -62,7 +62,7 @@ Aというブランチの内容をBのブランチに反映させるときは
 1. ブランチBを選択`git checkout branch-b`して
 2. ブランチAをmerge`git merge branch-a`
 
-### Fast-Foward と recursive strategy な merge 
+### Fast-Foward と recursive strategy な merge
 
 Fast-Forward: mergeする先と、現在のブランチの間で枝分かれが行われていない。  
 もし明示的にr-sなmergeをしたければ、オプション指定`--no-ff`をつければ良い
@@ -80,32 +80,21 @@ git merge --no-ff <mergeするbranchの名前>
 + リモートリポジトリに存在しているブランチを直接編集できない
  + なので、リモートリポジトリにあるブランチを追跡するようなブランチを、自分のリポジトリ（ローカルリポジトリ）の中に作る必要がある。
 
-## リモートリポジトリのブランチを編集するやり方
+## ローカルで新しいブランチ`hoge_branch`を切ってリモートリポジトリにpushする
 
 1. master（もしくは編集したいブランチ）から新しいブランチを作る
-```
-git checkout -b hoge_branch master
-```
-
+  * `git checkout -b hoge_branch master`
 2. 何かしら編集してコミットする
-```
-git add *.txt
-git commit -m "Add text files"
-```
-
+  * `git add *.txt`  and `git commit -m "Add text files"`
 3. リモートリポジトリに、新しく作ったブランチを複製する
-```
-git push origin <local_branch_name>:<new_branch_name@remote>
-```
-例
-```
-git push origin hoge_branch:hoge_branch
-```
-
+  * `git push origin <local_branch_name>:<new_branch_name@remote>`
+    * `git push origin hoge_branch:hoge_branch`
+  * 同じ名前でリモートに登録する場合は省略できる。
+    * `git push origin hoge_branch`と同じ意味
 1. 複製したブランチを、ローカルのブランチが追跡するように設定する
-```
-git branch --set-upstream-to=origin/hoge_branch hoge_branch
-```
+  * `git branch --set-upstream-to=origin/hoge_branch hoge_branch`
+  * Note: 後半のリモートに登録して追跡することを一気にやるコマンド
+    * `git push -u origin hoge_branch`
 
 ## 後始末
 

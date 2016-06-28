@@ -116,3 +116,20 @@ git push origin :delete_branch
 ```
 git reset --hard <戻りたいコミットのid>
 ```
+
+## 追跡ブランチとは
+
+追跡ブランチはリモート追跡ブランチ(remote-tracking branch)と上流ブランチ(upstream branch)という2つの概念からなる
+
+### リモート追跡ブランチ
+
+* 場所：ローカルリポジトリ
+* 役割：他のリポジトリの状態を追いかける
+* `git fetch`で更新されるブランチのこと
+* 普通の設定でリモートリポジトリを登録していれば`origin/master`とか`origin/foo`
+
+### 上流ブランチ
+
+* 引数なしで`git pull`したときの対象となるブランチ
+  * `git checkout master` and `git pull`した時、`master`は自動的に`origin/master`の変更を引っ張ってくる（mergeする）。
+  * 

@@ -5,7 +5,7 @@
 
 分散型のファイル管理システムのこと。履歴を記録しながら、バージョン管理をするので、「あ、あの時のファイルって中身なんだったっけ」とかそういう時に便利。
 
-分散型ってなんやねんとかそういうのは、このへん参照してください。
+分散型とは、等のことは以下など参照。
 
 - https://github.com/masaru-b-cl/introduction-to-vcs
 - https://github.com/takanabe/introduction-to-git/blob/master/01_what_is_git.md
@@ -132,4 +132,4 @@ git reset --hard <戻りたいコミットのid>
 
 * 引数なしで`git pull`したときの対象となるブランチ
   * `git checkout master` and `git pull`した時、`master`は自動的に`origin/master`の変更を引っ張ってくる（mergeする）。
-  * 
+  *
